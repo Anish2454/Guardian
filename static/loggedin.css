@@ -1,0 +1,104 @@
+.navbar {
+    background-color: #DEECF4;
+    margin-bottom: 0;
+    border-radius: 0;
+    border-color: transparent;
+    padding: 0cm 0cm 0cm 1.5cm;
+    position: sticky;
+}
+
+
+div.slide-left {
+    width:100%;
+    overflow:hidden;
+}
+div.slide-left h1 {
+    animation: slide-left 5s;
+}
+
+@keyframes slide-left {
+    from {
+margin-left: 100%;
+width: 300%;
+    }
+
+    to {
+margin-left: 0%;
+width: 100%;
+    }
+}
+
+
+#grad1 {
+    background: #619DCF; /* For browsers that do not support gradients */
+    background: linear-gradient(to bottom right, #619DCF, white); /* Standard syntax (must be last) */
+}
+
+h1 {
+    font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
+    font-weight: 200;
+    letter-spacing: 1px;
+    color: #E9F2F7;
+}
+
+h2{
+    color: red;
+    font-family: 'Catamaran', 'Helvetica', 'Arial', 'sans-serif';
+    font-weight: 50;
+    letter-spacing: 1px;
+}
+li{
+    font-weight: bold;
+}
+
+
+.col-sm-12{
+    padding: 0cm 2cm 1cm 2cm;
+
+}
+
+.well{
+    background: #E3ECF5;
+    padding: 0cm 1cm 0cm 1cm;
+}
+
+.well-sm{
+    padding: 2cm 2cm 2cm 2cm;
+    border-color: transparent;
+}
+
+.btn-default{
+    color: #58819F; font-size: 20px; opacity: 0.65;
+}
+
+.btn-info{
+    color: #58819F;
+    background-color: #C6D8FF;
+    font-size: 20px;
+    opacity: 0.65;
+    border-color: transparent;
+    width: 5cm;
+    padding: 1cm 0cm 1cm 0cm;
+
+}
+
+.btn-info:hover{
+    color: #58819F;
+    background-color: white;
+    border-color: transparent;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+.content{
+    width: 100%;
+    height: 100%
+}

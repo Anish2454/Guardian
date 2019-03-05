@@ -1,0 +1,55 @@
+{% extends "user_base.html" %}
+
+{% block title %}
+  Schedule
+{% endblock %}
+
+{% block content %}
+
+<div class="col-sm-12 text-left"  id="grad1">
+  <div class="slide-left">
+    <h1>Welcome {{name}} to your SCHEDULE</h1>
+  </div>
+  <hr>
+  <div class = "well">
+    <table class="table">
+      <thead>
+	<tr>
+          <th><h3>Clear</h3></th>
+          <th><h3>Time</h3></th>
+          <th><h3>Acitivity</h3></th>
+	  <th><h3>Music Recommendations</h3></th>
+	</tr>
+      </thead>
+      {% for i in clock %}
+      <tbody>
+	<tr>
+	  <td>
+	    <center>
+	      <a href="/rmSchedule?id={{i}}">
+		<button type="button" class="btn btn-default btn-med" value="Submit">
+		  <span class="glyphicon glyphicon-remove" aria-hidden="true">
+		  </span>
+		</button>
+	      </a>
+	    </center>
+	  </td>
+          <td>{{i}}:00</td>
+          <td>{{sch[i]|safe}}</td>
+          <td>
+            {% if song[i] == '(EMPTY)' %}
+            (EMPTY)
+            {% else %}
+            <iframe src="https://open.spotify.com/embed?uri={{song[i]}}" width="300" height="80" frameborder="0" allowtransparency="true"></iframe>
+            {% endif %}
+          </td>
+	</tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <script src="../static/schedule.js"></script>
+  </div>
+</div>
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{% extends "guess_base.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+
+<div id="loader"></div>
+<div class="col-sm-12">
+<div class="col-sm-8 text-left"  id="grad1" style= "padding: 5cm 0cm 0cm 0cm;">
+   <div style="display:none;" id="myDiv" class="animate-bottom">
+      <img style="width: 300px; height:300px;"src="/static/logo.png"/>
+      <center><h5>Guardian</h5></center>
+      <button type="button" class="btn btn-link" style="color: #0e0ece;"><em>Click to learn more</em></button>
+      <h4>
+        Guardian uses Twilio, a cloud communications platform, to keep our loved ones safe. When a user is moving from place to place, Guardian regularly checks in on them via SMS messaging, to ensure that the user is safe and notifies emergency contacts in any case otherwise. This way, friends and family can always be sure they know of their loved ones' wellbeing.
+      </h4>
+  </div>
+</div>
+<div class="animate-bottom col-sm-4" id="grad1">
+  <img style="height: 520px; width: 310px; margin: 4cm 0cm 0cm 0cm;" src="/static/screen.png"/>
+</div>
+</div>
+{% endblock %}

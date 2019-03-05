@@ -1,0 +1,45 @@
+{% extends "guess_base.html" %}
+
+{% block title %}
+  Home
+{% endblock %}
+
+{% block content %}
+
+
+    <div class="col-sm-12 text-left" id="grad1">
+
+  <div style="margin-left: 2cm;">
+<h1>LOGIN</h1>
+  </div>
+   {# Display flashed messages #}
+  {% set messages = get_flashed_messages() %}
+
+  {% for msg in messages %}
+  <center><h2>{{msg}}</h2></center>
+  {% endfor %}
+  <hr>
+
+  <div class = "well" style="margin-right: 2cm; margin-left: 2cm;">
+    <form action="/auth">
+    <div class="form-group">
+      <label for="email">Username:</label>
+      <input type="text" class="form-control" id="text" placeholder="Enter username" name="username" autofocus>
+    </div>
+    <div class="form-group">
+      <label for="pwd">Password:</label>
+      <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+    </div>
+    <div class="checkbox">
+      <label><input type="checkbox" name="remember"> Remember me</label>
+    </div>
+    <input type="submit" class="btn btn-default" value="Submit">
+    </form>
+    <br>
+    Don't have an account yet? Click <a href="createaccount">here</a>!
+    </div>
+</div>
+</div>
+</div>
+
+{% endblock %}

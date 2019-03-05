@@ -1,0 +1,92 @@
+{% extends "user_base.html" %}
+
+{% block title %}
+Home
+{% endblock %}
+
+{% block content %}
+<script type=text/javascript>
+   $(function() {
+     $('a#add').bind('click', function() {
+       $.post('/add_contact', {
+         name: $('#contact_name').val(),
+         number: $('#contact_number').val(),
+         msg: $('#contact_msg').val()
+       },
+       function(){
+         var name = $('#contact_name').val();
+         var number = $('#contact_number').val();
+         var msg = $('#contact_msg').val();
+         $('#contact_table').prepend("<tr><td>" + name + "</td><td>" + number + "</td><td>" + msg + "</td></tr>");
+         console.log("hello");
+       });
+       return false;
+     });
+   });
+</script>
+<div class="col-sm-12 text-left"  id="grad1">
+
+   <div >
+      <center><h5 style="padding: 3cm 5cm 3cm 5cm;" id="welcome"> Welcome {{ name }}. </h5></center>
+   </div>
+     <div class = "well well-sm col-sm-7" style="padding: 1cm 1cm 1cm 1cm; border-radius: 10px;">
+       <center>
+         <h3 style="font-size: 3em; color: #1850A5;">Emergency Contact Numbers</h3>
+         <table class="table" id="contact_table">
+             <thead>
+                 <tr>
+                     <th>
+                       <h3>Name</h3>
+                     </th>
+                     <th>
+                       <h3>Number</h3>
+                     </th>
+                     <th>
+                       <h3>Personalized Message</h3>
+                     </th>
+                 </tr>
+             </thead>
+             <tbody>
+               {% for i in contacts %}
+               <tr>
+                 <td> {{i}} </td>
+                 <td> {{contacts[i][0]}} </td>
+                 <td> {{contacts[i][1]}} </td>
+               </tr>
+               {% endfor %}
+               <tr>
+                 <td> <input type="text" class="input-home" id="contact_name" placeholder="Name"></input> </td>
+                 <td> <input type="text" class="input-home" id="contact_number" placeholder="Phone Number"></input> </td>
+                 <td> <input type="text" class="input-home" id="contact_msg" placeholder="Personal Message"></input> </td>
+               </tr>
+             </tbody>
+          </table>
+       </center>
+       <a style=""href=# id=add><button type="submit" style="background-color: #1850A5; border-radius: 75px;"class="btn btn-default btn-med"><p style="font-size: 1.1em; font-weight: bold; font-family: Helvetica; color: white; padding: 10px 40px 0px 40px">ADD NUMBER</p></button></a>
+     </div>
+
+     <div style="border-radius: 10px;"class = "well well-sm col-sm-4 col-sm-offset-1">
+       <center>
+         <h3 style="font-size: 3em; color: #1850A5;">Profile</h3>
+         <table class="table" id="contact_table">
+           <thead>
+           <tr>
+             <th> <h3> Username </h3> </th>
+             <td> <p class = "profile_td">{{name}}</p> </td>
+           </tr>
+           </thead>
+           <tr>
+             <th> <h3> Phone Number </h3> </th>
+             <td><p class = "profile_td">{{phone}}</p> </td>
+           </tr>
+           <tr>
+             <th> <h3> Frequency </h3> </th>
+             <td><p class = "profile_td">30 Minutes</p></td>
+           </tr>
+
+          </table>
+       </center>
+     </div>
+
+</div>
+{% endblock %}

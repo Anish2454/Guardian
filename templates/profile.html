@@ -1,0 +1,44 @@
+{% extends "user_base.html" %}
+
+{% block title %}
+    Profile
+{% endblock %}
+{% block content %}
+
+<div class="col-sm-12 text-left"  id="grad1">
+    <div class="slide-left">
+      <h1> Welcome {{ name }} </h1>
+      </div>
+    <hr>
+    <!--Insert flask message-->
+    <!--<hr>-->
+<div class = "well">
+    <table class = "table">
+        <thead>
+            <tr>
+                <th><h3>Setting</h3></th>
+                <th><h3>Value</h3></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Music Genre:</td>
+                <td>{{info.music}}</td>
+            </tr>
+            <tr>
+                <td>Zipcode:</td>
+                <td>{{ info.address }}</td>
+            </tr>
+        </tbody>
+    </table>
+    <br>
+    <form method="get" action= "/edit_profile">
+      <button class="btn btn-default">Edit profile</button>
+    </form>
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}
